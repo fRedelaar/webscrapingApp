@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportComponent implements OnInit {
 
+  currentRate: number = 4;
+
   constructor() { }
 
   ngOnInit(): void {

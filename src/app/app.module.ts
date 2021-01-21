@@ -6,6 +6,8 @@ import { MainbarComponent } from './mainbar/mainbar.component';
 import { AuthComponent} from "./auth/auth.component";
 import { ReportComponent } from './report/report.component';
 import { FooterComponent } from './footer/footer.component';
+import {FormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes =[
   { path: 'mainbar', component: MainbarComponent },
@@ -23,7 +25,9 @@ const appRoutes: Routes =[
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
