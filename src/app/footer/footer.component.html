@@ -15,22 +15,27 @@
               ngModel
               name="username"
               required
+              ngModel="JaneDoe123"
             >
           </div>
           <button class="btn btn-primary" type="button">Suggest an Username</button>
           <div class="form-group">
             <label for="email">Mail</label>
-            <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+            <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel" ngModel="JaneDoe@gmail.com">
           </div>
           <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email address</span>
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
-          <select id="secret" class="form-control" ngModel name="secret">
+          <select id="secret" class="form-control" [ngModel]="defaultQuestion" name="secret">
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+        <div class="form-group">
+          <textarea name="questionAnswer" rows="3" class="control" [(ngModel)]="answer"></textarea>
+        </div>
+        <p>Your reply: {{answer}}</p>
         <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
       </form>
     </div>

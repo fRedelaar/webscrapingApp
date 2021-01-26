@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -7,13 +7,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  @ViewChild('f') signupForm: NgForm;
+  defaultQuestion = 'pet';
+  answer = '';
 
   suggestUsername() {
     const suggestedName = 'Superuser';
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    console.log(this.signupForm);
   }
   constructor() { }
 
