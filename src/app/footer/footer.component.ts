@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -7,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  suggestUsername() {
+    const suggestedName = 'Superuser';
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form);
+  }
   constructor() { }
 
   ngOnInit(): void {
